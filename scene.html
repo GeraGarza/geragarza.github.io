@@ -1,0 +1,193 @@
+<html>
+<!--   <iframe  allowvr="yes" style="position: absolute; width: 100%; height:100%; top: 150%; z-index: -1;" allowfullscreen="yes" src="scene.html"  frameBorder="0"></iframe> -->
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+  <a-scene physics vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+    
+
+    <a-sky id="sky" 
+    color="pink"
+    rotation="0 320 0"
+      src="assets\img\sky.png"
+      animation="property: rotation; from: 0 0 0; to: 0 360 0 ; dur: 600000; easing: linear; loop: true;"
+      >
+      > </a-sky>
+
+    <!-- <a-camera id="camera" position="-90 0 0" look-controls fov="170" position="0 0 10"> -->
+    <!-- <a-camera look-controls> -->
+
+    <!-- Lighting -->
+    <!-- <a-light type="hemisphere" color="#00316E"></a-light> -->
+
+    <a-entity animation="property: rotation; from: 0 0 0; to: 0 0 0 ; dur: 3000; easing: linear;">
+      <a-entity id="camera" camera="fov:70" look-controls position="0 0.5 0">
+
+      </a-entity>
+    </a-entity>
+
+    <a-asset item id="duck" response-type="arraybuffer"
+      src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fduck.glb?v=1589540182898">
+    </a-asset>
+    <a-asset item id="rocket" response-type="arraybuffer"
+      src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Frocket_ship.glb?v=1589536836870">
+    </a-asset>
+    <a-asset item id="standing" response-type="arraybuffer"
+      src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fstanding.glb?v=1589580713753">
+    </a-asset>
+
+    <a-asset item id="my-image" response-type="arraybuffer"
+      src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fimage.png?v=1589601160589">
+    </a-asset>
+
+
+
+
+
+    <!-- DUCK -->
+    <a-entity scale="0.3 0.35 0.3" position=" 1.5 -0.7 -2" rotation="0 320 0" animation-mixer="clip:mixamo.com"
+      gltf-model="#standing">
+    </a-entity>
+
+    <a-entity id="thing" scale="0.25 0.25 0.25" rotation="0 270 0" animation-mixer="clip:walk" gltf-model="#duck"
+      animation="property: position; from: 5 -2 -6; to: 3 -2 -6 ; dur: 2000; easing: linear;">
+    </a-entity>
+
+
+    <!-- TEXT -->
+    <a-entity position="0 0 0" animation="property: scale; from: 0 0 0; to: 1 1 1; dur: 3000; easing: easeInOutElastic;"
+      animation__2="property: rotation; from: 0 0 0; to: 0.3 0.3 0.3; dur: 2000; easing: linear;  loop: true; dir: alternate;">
+      <a-entity position="1.1 0.8 -2">
+
+        <a-plane opacity=".3" position="0 0 0" rotation="0 -10 0" scale="1.8 1 1"
+          material=" src:#my-image; transparent:true; opacity:0.9;alpha-test:0.5"></a-plane>
+
+        <a-text value="Hello! I'm Gera" shader="msdf"
+          font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/autourone/AutourOne-Regular.json"
+          position="-0.42 0.2 0" scale="1.3 1.8 1" rotation="0 -10 0" width="1.9" color="black"></a-text>
+
+        <a-text value="Welcome to my page" shader="msdf"
+          font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/autourone/AutourOne-Regular.json"
+          position="-0.60 0.05 0" scale="1.3 1.8 2 1" rotation="0 -10 0" width="1.9" color="black"></a-text>
+
+        <a-text value="Drag around to explore" shader="msdf"
+          font="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/autourone/AutourOne-Regular.json"
+          position="-.52 -0.07 0" scale="1 1.4 2" rotation="0 -10 0" width="1.9" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- ROCKET -->
+    <a-entity scale="0.01 0.01 0.01" rotation="-70 -45 -45" gltf-model="#rocket" animation-mixer="clip:Take 001"
+      animation="property: position; from: -100 0 -40; to: 60 20 -40 ; dur: 20000; easing: linear;  loop: true;">
+    </a-entity>
+
+
+    <!-- ROCKET -->
+    <a-entity scale="0.01 0.01 0.01" rotation="-70 -45 -45" gltf-model="#rocket" animation-mixer="clip:Take 001"
+      animation="property: position; from: -100 40 40; to: 60 60 40 ; dur: 20000; easing: linear;  loop: true;">
+    </a-entity>
+
+    
+    <!-- ROCKET -->
+    <a-entity scale="0.01 0.01 0.01" rotation="-100 -60 -45" gltf-model="#rocket" animation-mixer="clip:Take 001"
+      animation="property: position; from: -100 80 0; to: 60 30 0 ; dur: 20000; easing: linear;  loop: true;">
+    </a-entity>
+
+  </a-scene>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+
+t = setTimeout(approach, 2000);
+t = setInterval(walkacross, 10000);
+
+var counter = 1;
+var toggle = true;
+
+function approach() {
+  var thing = document.getElementById("thing")
+  if (thing) {
+    thing.setAttribute("animation-mixer", "clip:idle");
+
+  }
+
+}
+
+async function walkacross() {
+  
+  if (toggle) {
+
+    // property: position; from:-2 -2 -6; to: 2 -2 -6 ; dur: 2000; easing: linear; dir: alternate
+    document.getElementById("thing").setAttribute("rotation", "0 270 0");
+    document.getElementById("thing").setAttribute("animation-mixer", "clip:idle");
+    document.getElementById("thing").setAttribute("animation", "property: position; from:3 -2 -6; to: 3 -2 -6 ; dur: 4000; easing: linear;  ");
+
+    await setTimeout(function () {
+      document.getElementById("thing").setAttribute("animation-mixer", "clip:walk");
+      document.getElementById("thing").setAttribute("animation", "property: position; from:3 -2 -6; to: -3 -2 -6 ; dur: 4000; easing: linear;  ");
+    }, 6000);
+
+    toggle = false;
+  } else {
+
+    document.getElementById("thing").setAttribute("rotation", "0 90 0");
+    document.getElementById("thing").setAttribute("animation-mixer", "clip:idle");
+    document.getElementById("thing").setAttribute("animation", "property: position; from:-3 -2 -6; to: -3 -2 -6 ; dur: 4000; easing: linear;  ");
+
+    await setTimeout(function () {
+      document.getElementById("thing").setAttribute("animation-mixer", "clip:walk");
+      document.getElementById("thing").setAttribute("animation", "property: position; from:-3 -2 -6; to: 3 -2 -6 ; dur: 4000; easing: linear;  ");
+    }, 6000);
+
+    toggle = true;
+  }
+
+
+};
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+<!--       
+
+        animation__2="property: rotation; to: 0 270 0 ; dur: 1000; easing: linear;  
+      dir: alternate;
+      loop: true; 
+      startEvents: rotation-start; 
+      pauseEvents: rotation-pause; 
+      resumeEvents: rotation-resume;
+       "
+-->
+
+
+<!-- 
+<div  style="height: 550px; overflow: hidden">
+  <iframe id='myIframe' allowvr="yes" style="width: 100%; height: 700px;z-index: -1; overflow-y:hidden;
+  overflow-x:hidden; " allowfullscreen="yes" src="scene.html"  frameBorder="0"></iframe>
+  </div>
+
+  <iframe  allowvr="yes" style="width: 100%; height: 700px;" allowfullscreen="yes" src="computer.html"  frameBorder="0"></iframe> -->

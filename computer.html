@@ -1,0 +1,67 @@
+<html>
+<!--   <iframe  allowvr="yes" style="position: absolute; width: 100%; height:100%; top: 150%; z-index: -1;" allowfullscreen="yes" src="scene.html"  frameBorder="0"></iframe> -->
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <style>
+        @media (max-width: 768px) {
+            #scroll-here {
+                font-size: 22px;
+                line-height: 36px;
+            }
+        }
+
+        #scroll-here {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 56px;
+            color: #fff;
+            width: 30%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.6);
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            padding: 50vh 0;
+            font-family: Montserrat, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="scroll-here">
+        
+    </h1>
+
+    <a-scene physics vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+
+        <a-asset item id="sitting" response-type="arraybuffer"
+            src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fsitting.glb?v=1589578767148">
+        </a-asset>
+        <a-asset item id="workspace" response-type="arraybuffer"
+            src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fworkspace.glb?v=1589582754449">
+        </a-asset>
+
+        <a-sky src="https://cdn.glitch.com/ec73182f-9582-4d9c-a69f-ecae2456372c%2Fcanyon.jpg?v=1589584627731"> </a-sky>
+
+        <a-entity scale="0.375 0.375 0.375" position="0.3 0.8  -1" rotation="0 268 0" animation-mixer="clip:mixamo.com"
+            gltf-model="#sitting">
+        </a-entity>
+        <a-entity scale=" 0.075 0.075 0.075" position="-0.15 0.8  -1.25" rotation="0 90 0"
+            animation-mixer="clip:mixamo.com" gltf-model="#workspace">
+        </a-entity>
+
+
+    </a-scene>
+
+</body>
+
+</html>
