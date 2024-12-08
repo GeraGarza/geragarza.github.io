@@ -627,7 +627,7 @@ body {
 
 /* Default styling for larger screens */
 @media (min-width: 1024px) {
-  .text-description {
+  .text-description{
       font-size: 1em; /* Larger text size for increased legibility */
       line-height: 1.8em; /* Greater line-height for enhanced readability */
       padding: 15px 25px; /* Increased padding */
@@ -636,7 +636,7 @@ body {
 
 /* Styling for medium screens, like tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .text-description {
+  .text-description{
       font-size: 0.8em; /* Moderate text size */
       line-height: 1.6em; /* Moderate line-height */
       padding: 12px 20px; /* Moderate padding */
@@ -645,7 +645,7 @@ body {
 
 /* Styling for small screens, like smartphones */
 @media (max-width: 767px) {
-  .text-description {
+  .text-description{
       font-size: 0.5em; /* Standard text size for small screens */
       line-height: 1.5em; /* Standard line-height */
       padding: 10px 15px; /* Reduced padding */
@@ -679,7 +679,7 @@ body {
   left: 10px;
   background-color: #f0f8ff;
   color: #333;
-  font-size: 0.9em;
+  font-size: 0.7em;
   font-style: italic;
   padding: 8px 12px;
   border-radius: 12px;
@@ -1077,7 +1077,7 @@ body {
 
 /* Default styling for larger screens */
 @media (min-width: 1024px) {
-  .portfolio-title {
+  .portfolio-title, .portfolio-flters li {
       font-size: 1em; /* Larger font size for big screens */
       padding: 20px 30px; /* More padding around the text */
   }
@@ -1085,7 +1085,7 @@ body {
 
 /* Styling for medium screens, like tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .portfolio-title {
+  .portfolio-title, .portfolio-flters li{
       font-size: 0.8em; /* Moderate font size for medium screens */
       padding: 15px 25px; /* Moderate padding */
   }
@@ -1093,7 +1093,7 @@ body {
 
 /* Styling for small screens, like smartphones (including iPhones) */
 @media (max-width: 767px) {
-  .portfolio-title {
+  .portfolio-title, .portfolio-flters li{
       font-size: 0.5em; /* Smaller font size for small screens */
       padding: 10px 20px; /* Less padding for smaller devices */
   }
@@ -1110,8 +1110,6 @@ body {
 .portfolio #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 10px 18px 12px 18px;
-  font-size: 14px;
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
