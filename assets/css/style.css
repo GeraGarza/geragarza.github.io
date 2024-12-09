@@ -1040,7 +1040,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: inline-block;
   width: 100%;
-  margin: 0px;
+  margin-bottom: 6px;
+  padding: 10px 20px;
 }
 
 
@@ -1051,7 +1052,6 @@ body {
   .portfolio-flters li {
     font-size: 0.8em;
     /* Larger font size for big screens */
-    padding: 20px 30px;
     /* More padding around the text */
   }
 
@@ -1068,9 +1068,6 @@ body {
     font-size: 1em;
     /* Larger text size for increased legibility */
     line-height: 1.8em;
-    /* Greater line-height for enhanced readability */
-    padding: 15px 25px;
-    /* Increased padding */
   }
 }
 
