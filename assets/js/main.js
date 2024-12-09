@@ -143,6 +143,17 @@
       });
     });
 
+   // ********** PIN **********************************************
+   $('#nav-pin').on('click', function () {
+    $("#portfolio-flters li").removeClass('filter-active');
+    $("#my-pin").addClass('filter-active');
+
+    portfolioIsotope.isotope({
+      filter: $(this).data('filter')
+    });
+  });
+
+
     // ********** WEB **********************************************
     $('#nav-web').on('click', function () {
       $("#portfolio-flters li").removeClass('filter-active');
