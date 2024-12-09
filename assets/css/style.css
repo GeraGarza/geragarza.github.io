@@ -397,7 +397,7 @@ h6 {
 #hero .hero-bg {
   z-index: 1;
   background-color:
-    rgba(30, 30, 30, 0.4);
+    rgba(143, 143, 143, 0.74);
   border-radius: 12px;
   border: solid;
   border-color: #555555;
@@ -406,7 +406,7 @@ h6 {
   cursor: pointer;
   color: white;
   padding: 20px;
-  ;
+  font-size: 1.2em;
 
 }
 
@@ -608,7 +608,7 @@ body {
 .description-list {
   list-style-type: disc;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 1px;
 }
 
 .description-list li {
@@ -1049,7 +1049,7 @@ body {
 
   .portfolio-title,
   .portfolio-flters li {
-    font-size: 1em;
+    font-size: 0.8em;
     /* Larger font size for big screens */
     padding: 20px 30px;
     /* More padding around the text */
@@ -1111,7 +1111,7 @@ body {
 
   .portfolio-title,
   .portfolio-flters li {
-    font-size: 0.5em;
+    font-size: 0.7em;
     /* Smaller font size for small screens */
     padding: 10px 20px;
     /* Less padding for smaller devices */
