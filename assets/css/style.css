@@ -555,26 +555,6 @@ body {
 }
 
 
-/* Default styling for larger screens */  
-@media (min-width: 1024px) {  
-  .portfolio-item {  
-    height: 300px;
-  }  
-}  
-
-/* Styling for medium screens, like tablets */  
-@media (min-width: 768px) and (max-width: 1023px) {  
-  .portfolio-item {  
-    height: 250px;
-  }  
-}  
-
-/* Styling for small screens, like smartphones (including iPhones) */  
-@media (max-width: 767px) {  
-  .portfolio-item {  
-    height: 100px;
-  }  
-}  
 
 .portfolio-item:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -625,34 +605,6 @@ body {
   margin: 15px 0;
 }
 
-/* Default styling for larger screens */
-@media (min-width: 1024px) {
-  .text-description{
-      font-size: 1em; /* Larger text size for increased legibility */
-      line-height: 1.8em; /* Greater line-height for enhanced readability */
-      padding: 15px 25px; /* Increased padding */
-  }
-}
-
-/* Styling for medium screens, like tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .text-description{
-      font-size: 0.8em; /* Moderate text size */
-      line-height: 1.6em; /* Moderate line-height */
-      padding: 12px 20px; /* Moderate padding */
-  }
-}
-
-/* Styling for small screens, like smartphones */
-@media (max-width: 767px) {
-  .text-description{
-      font-size: 0.5em; /* Standard text size for small screens */
-      line-height: 1.5em; /* Standard line-height */
-      padding: 10px 15px; /* Reduced padding */
-  }
-}
-
-/* Shared styles for the description list */
 .description-list {
   list-style-type: disc;
   margin: 0;
@@ -1057,10 +1009,26 @@ body {
   --------------------------------------------------------------*/
 .portfolio {
   width: 100%;
+  align-content: center;
 }
 
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows items to wrap into next line */
+  justify-content: center;
+  /* Centers items horizontally */
+  gap: 20px;
+  /* Space between items */
+}
+
+
 .portfolio-item {
-  width: 31%;
+  width: 33%;
+  flex: 0 1 45%;
+  /* Each item takes up 45% of the container's width */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in width */
 }
 
 .portfolio-title {
@@ -1075,28 +1043,98 @@ body {
   margin: 0px;
 }
 
+
 /* Default styling for larger screens */
 @media (min-width: 1024px) {
-  .portfolio-title, .portfolio-flters li {
-      font-size: 1em; /* Larger font size for big screens */
-      padding: 20px 30px; /* More padding around the text */
+
+  .portfolio-title,
+  .portfolio-flters li {
+    font-size: 1em;
+    /* Larger font size for big screens */
+    padding: 20px 30px;
+    /* More padding around the text */
+  }
+
+  .portfolio-item {
+    width: 33%;
+    max-width: 300px;
+  }
+
+  .portfolio-item {
+    height: 300px;
+  }
+
+  .text-description {
+    font-size: 1em;
+    /* Larger text size for increased legibility */
+    line-height: 1.8em;
+    /* Greater line-height for enhanced readability */
+    padding: 15px 25px;
+    /* Increased padding */
   }
 }
 
 /* Styling for medium screens, like tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .portfolio-title, .portfolio-flters li{
-      font-size: 0.8em; /* Moderate font size for medium screens */
-      padding: 15px 25px; /* Moderate padding */
+
+  .portfolio-title,
+  .portfolio-flters li {
+    font-size: 0.8em;
+    /* Moderate font size for medium screens */
+    padding: 15px 25px;
+    /* Moderate padding */
   }
+
+  .portfolio-item {
+    width: 45%;
+    max-width: 500px;
+  }
+
+  .portfolio-item {
+    height: 250px;
+  }
+
+  .text-description {
+    font-size: 0.8em;
+    /* Moderate text size */
+    line-height: 1.6em;
+    /* Moderate line-height */
+    padding: 12px 20px;
+    /* Moderate padding */
+  }
+
+
 }
 
 /* Styling for small screens, like smartphones (including iPhones) */
 @media (max-width: 767px) {
-  .portfolio-title, .portfolio-flters li{
-      font-size: 0.5em; /* Smaller font size for small screens */
-      padding: 10px 20px; /* Less padding for smaller devices */
+
+  .portfolio-title,
+  .portfolio-flters li {
+    font-size: 0.5em;
+    /* Smaller font size for small screens */
+    padding: 10px 20px;
+    /* Less padding for smaller devices */
   }
+
+  .portfolio-item {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .portfolio-item {
+    height: 250px;
+  }
+
+  .text-description {
+    font-size: 0.5em;
+    /* Standard text size for small screens */
+    line-height: 1.5em;
+    /* Standard line-height */
+    padding: 10px 15px;
+    /* Reduced padding */
+  }
+
 }
 
 
